@@ -1,5 +1,5 @@
 context:
-  version: 1.0.1
+  version: "1.1.0"
 
 package:
   name: nitypes
@@ -7,7 +7,7 @@ package:
 
 source:
   - url: https://pypi.org/packages/source/n/nitypes/nitypes-${{ version }}.tar.gz
-    sha256: dc20a98c009651adf9f2769ec15cdbe939375bad2f2546765abbc23982301a8b
+    sha256: f273b5131ef0d5b848c37a0a63452626caf5c2938f7744c324f7991b76fa0b60
 
 build:
   number: 0
@@ -30,7 +30,9 @@ tests:
       imports:
         - nitypes
       pip_check: true
-      python_version: ${{ python_min }}.*
+      python_version:
+        - ${{ python_min }}.*
+        - "*"
 
 about:
   homepage: https://github.com/ni/nitypes-python/
